@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Csv Home</title>
+{% endblock%}
+{% block content %}
+<form  method="post" action="">
+   {% csrf_token %}
+   <div>
+     {{ formset.management_form }}
+    <table align="center">
+      <tr>
+        <td text-align:"center";> <label >adres</label> </td>
+        <td text-align="center"> <label>durum</label> </td>
+        <td text-align="center"> <label>hedef adres</label></td>
+        <td text-align="center"><label>zaman</label> </td>
+        <td text-align="center"></td><td></td>
+      </tr>
+      {% for f in formset %}
+      <tr>
+        <td>  {{f.adres}} </td>
+        <td>{{f.durum}}</td>
+        <td> {{f.hedef_adres}} </td>
+        <td> {{f.zaman}} </td>
+      </tr>
+        {% endfor %}
+        <tr>
+          <td></td><td></td><td></td><td><br/>
+            <input class="btn btn-primary active" type="submit" value="Kaydet" style="float : right;"/>
+          </td></tr>
+           </table>
+         </div>
+       </form>
+       {% endblock %}
