@@ -10,7 +10,7 @@ from .models import CsvData
 @login_required
 def editcsv(request):
     #datacsv is a dict and defines fields of csv automatically that icludes csv datas
-    datacsv=csvdoc.CSVFILE().display('/static/gkts.csv')
+    datacsv=csvdoc.CSVFILE().display('/static/spots.csv')
     count=len(datacsv['adres'])
     #formset have forms as value of count
     CsvDataFormSet=formset_factory(CsvDataForm,extra=count)
@@ -25,7 +25,7 @@ def editcsv(request):
             dlist[i].append(request.POST.get("form-" + str(i-1)+"-durum"))
             dlist[i].append(request.POST.get("form-" + str(i-1)+"-hedef_adres"))
             dlist[i].append(request.POST.get("form-" + str(i-1)+"-zaman"))
-        with open('/static/gkts.csv',"w") as fw:
+        with open('/static/spots.csv',"w") as fw:
             writer=csv.writer(fw, delimiter=",",quotechar='|', quoting=csv.QUOTE_MINIMAL)
             writer.writerows(dlist)
     else:
