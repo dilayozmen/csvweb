@@ -1,6 +1,6 @@
-adres, durum, hedef adres, zaman
-f1, acik, a2, 01.01.2016
-f2, kapali, b2, 01.01.2015
-f3, acik, c2, 01.02.2016
-f4, kapali, d2, 01.05.2016
-f5, kapali, e2, 01.04.2012
+adres,durum,hedef adres,zaman
+f1,acik,a2,01.01.2016
+f2,kapali,b2,01.01.2015
+f3,acik,c2,01.02.2016
+f4,kapali,d2,01.05.2016
+f5,kapali,e2,01.04.2012
