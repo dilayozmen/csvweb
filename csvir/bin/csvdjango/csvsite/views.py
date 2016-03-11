@@ -10,9 +10,9 @@ from .models import CsvData
 @login_required
 def editcsv(request):
     #datacsv is a dict and defines fields of csv automatically that icludes csv datas
-    datacsv=csvdoc.CSVFILE().display('/static/spots.csv')
+    datacsv=csvdoc.CSVFILE().display('static/spots.csv')
     count=len(datacsv['adres'])
-    #formset have forms as value of count
+    #formset have forms as value of counto
     CsvDataFormSet=formset_factory(CsvDataForm,extra=count)
     if request.POST:
         dlist=[['adres','durum','hedef adres','zaman'],]
